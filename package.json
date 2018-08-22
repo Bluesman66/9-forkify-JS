@@ -1,0 +1,23 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "forkify project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bluesman66/9-forkify-JS.git"
+  },
+  "author": "Alex Paclin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bluesman66/9-forkify-JS/issues"
+  },
+  "homepage": "https://github.com/Bluesman66/9-forkify-JS#readme",
+  "devDependencies": {
+    "webpack": "^4.17.0"
+  },
+  "dependencies": {}
+}
