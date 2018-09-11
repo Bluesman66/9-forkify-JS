@@ -3,7 +3,7 @@ import {
 } from './base';
 import {
     Fraction
-} from 'fraction.js';
+} from 'fractional';
 
 export const clearRecipe = () => {
     elements.recipe.innerHTML = '';
