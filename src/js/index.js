@@ -140,10 +140,6 @@ elements.shopping.addEventListener('click', e => {
     }
 });
 
-// TESTING
-state.likes = new Likes();
-likesView.toggleLikeMenu(state.likes.getNumLikes());  
-
 /** 
  * LIKE CONTROLLER
  */
@@ -163,7 +159,7 @@ const controlLike = () => {
         );
 
         // Toggle the like button
-        likesView.toggleLikeBtn(true);        
+        likesView.toggleLikeBtn(true);
 
         // Add like to UI list
         likesView.renderLike(newLike);
@@ -174,13 +170,27 @@ const controlLike = () => {
         state.likes.deleteLike(currentID);
 
         // Toggle the like button
-        likesView.toggleLikeBtn(false);        
+        likesView.toggleLikeBtn(false);
 
         // Remove like from UI list
         likesView.deleteLike(currentID);
-    }  
-    likesView.toggleLikeMenu(state.likes.getNumLikes());  
+    }
+    likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
+
+// Restore liked recipes on page load
+window.addEventListener('load', () => {
+    state.likes = new Likes();
+
+    // Restore likes
+    state.likes.readStorage();
+
+    // Toggle like menu button
+    likesView.toggleLikeMenu(state.likes.getNumLikes());
+
+    // Render the existing likes
+    state.likes.likes.forEach(like => likesView.renderLike(like));
+});
 
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
